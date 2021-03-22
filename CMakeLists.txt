@@ -172,19 +172,42 @@ target_include_directories(rlottie PUBLIC
         libs/rlottie/src/vector/freetype
         libs/rlottie/src/vector/stb)
 
+#zlib
+add_library(zlib STATIC
+        libs/zlib/adler32.c
+        libs/zlib/compress.c
+        libs/zlib/crc32.c
+        libs/zlib/deflate.c
+        libs/zlib/gzclose.c
+        libs/zlib/gzlib.c
+        libs/zlib/gzread.c
+        libs/zlib/gzwrite.c
+        libs/zlib/inflate.c
+        libs/zlib/infback.c
+        libs/zlib/inftrees.c
+        libs/zlib/inffast.c
+        libs/zlib/trees.c
+        libs/zlib/uncompr.c
+        libs/zlib/zutil.c
+        )
+target_compile_options(zlib PUBLIC
+        -Wall -fPIC -finline-functions -ffast-math -Os)
+
 add_executable(tgs2animated
         main.cpp
         webp/webp_builder.cpp webp/webp_builder.h
         webp/render.cpp webp/render.h
         webp/utils.cpp webp/utils.h
         data/data_holder.cpp data/data_holder.h
+        libs/zstr/src/strict_fstream.hpp libs/zstr/src/zstr.hpp
         )
 target_compile_options(tgs2animated PUBLIC
         -ffast-math -Os -funroll-loops -ffast-math -fno-strict-aliasing -fno-math-errno)
 
-target_link_libraries(tgs2animated rlottie webp pthread dl)
+target_link_libraries(tgs2animated rlottie webp pthread dl zlib)
 
 target_include_directories(tgs2animated
         PRIVATE
         "${CMAKE_CURRENT_LIST_DIR}/libs/rlottie/inc/"
-        "${CMAKE_CURRENT_LIST_DIR}/libs/libwebp")
+        "${CMAKE_CURRENT_LIST_DIR}/libs/libwebp"
+        libs/zstr/src)

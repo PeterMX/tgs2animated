@@ -11,9 +11,22 @@
 #include "examples/unicode.h"
 #include "examples/example_util.h"
 #include "data/data_holder.h"
+#include "zstr.hpp"
+
+std::string decompress(std::istream& inputFile) {
+    zstr::istream zs(inputFile);
+    return std::string(std::istreambuf_iterator<char>(zs), std::istreambuf_iterator<char>());
+}
 
 bool convert(const std::string& filePath, const std::string& output) {
-    return render(filePath, output);
+    std::ifstream inputFile(filePath);
+    if (!inputFile.is_open()) {
+        std::cerr<<"Could not open file "<<filePath<<std::endl;
+        return -1;
+    }
+    const std::string decompressed = decompress(inputFile);
+    inputFile.close();
+    return render(decompressed, output);
 }
 
 static void Help() {

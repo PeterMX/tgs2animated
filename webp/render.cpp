@@ -9,7 +9,7 @@
 #include "render.h"
 
 bool render(const std::string &lottieData, const std::string &outputPath) {
-    std::unique_ptr<rlottie::Animation> animation = rlottie::Animation::loadFromFile(lottieData);
+    std::unique_ptr<rlottie::Animation> animation = rlottie::Animation::loadFromData(lottieData, std::to_string(1));
     if(!animation) {
         std::cout<<"Could no create animation, is your tgs file valid?"<<std::endl;
         return false;
