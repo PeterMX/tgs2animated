@@ -1,7 +1,7 @@
 # tgs2animated
 Converts animated Telegram stickers (*.tgs) to animated WEBPs (.webp)
 
-##Building from source
+## Building from source
 
 1. Make sure you have g++, make and cmake installed
 1. Clone this repository
@@ -18,12 +18,12 @@ cd build
 cmake ..
 make -j 2
 ```
-###Convert
+### Convert
 Pass an input tgs and an output webp
 ```
 $ ./tgs2animated -i ./sticker.tgs -o ./animation.webp
 ```
-###CLI arguments
+### CLI arguments
 ```
 $ ./tgs2animated -help
 Usage:
