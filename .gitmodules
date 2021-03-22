@@ -1,3 +1,12 @@
 [submodule "libs/zstr"]
 	path = libs/zstr
 	url = https://github.com/mateidavid/zstr.git
+
+[submodule "libs/rlottie"]
+    path = libs/rlottie
+    url = https://github.com/desktop-app/rlottie.git
+
+[submodule "libs/libwebp"]
+    path = libs/libwebp
+    url = https://chromium.googlesource.com/webm/libwebp
+    branch = 1.2.0
