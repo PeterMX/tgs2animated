@@ -104,5 +104,4 @@ int main(int argc, const char** argv) {
     DataHolder data(q, m, min_size, wh, wh);
     return convert(file, op);
 
-    return 0;
 }

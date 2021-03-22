@@ -10,7 +10,10 @@
 
 bool render(const std::string &lottieData, const std::string &outputPath) {
     std::unique_ptr<rlottie::Animation> animation = rlottie::Animation::loadFromFile(lottieData);
-    if(!animation) return false;
+    if(!animation) {
+        std::cout<<"Could no create animation, is your tgs file valid?"<<std::endl;
+        return false;
+    }
 
     auto buffer = std::unique_ptr<uint32_t[]>(new uint32_t[DataHolder::mWidth * DataHolder::mHeight]);
     size_t frameCount = animation->totalFrame();
