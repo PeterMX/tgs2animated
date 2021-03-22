@@ -1,0 +1,3 @@
+[submodule "libs/zstr"]
+	path = libs/zstr
+	url = https://github.com/mateidavid/zstr.git
