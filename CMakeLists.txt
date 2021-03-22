@@ -124,7 +124,8 @@ target_compile_options(webp PUBLIC
 target_compile_definitions(webp PUBLIC
         HAVE_MALLOC_H HAVE_PTHREAD WEBP_USE_THREAD)
 target_include_directories(webp PUBLIC
-        libs/libwebp)
+        libs/libwebp
+        libs/libwebp/src)
 
 #rlottie
 add_library(rlottie STATIC
