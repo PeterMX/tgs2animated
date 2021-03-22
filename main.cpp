@@ -33,10 +33,10 @@ static void Help() {
     using namespace std;
     cout<<"Usage:"<<endl;
     cout<<" tgs2animated [options] -i tgs_file -o webp_file"<<endl;
-    cout<<"Options:"<<endl;
-    cout<<"  -h / -help ............... this help"<<endl;
     cout<<"  -i <tgs_file>............. input tgs file"<<endl;
     cout<<"  -o <webp_file>............ output webp file"<<endl;
+    cout<<"Options:"<<endl;
+    cout<<"  -h / -help ............... this help"<<endl;
     cout<<"  -q <float> ............... quality factor (0:small..100:big)"<<endl;
     cout<<"  -m <int> ................. compression method (0=fast, 6=slowest)"<<endl;
     cout<<"  -min_size ................ minimize size"<<endl;
